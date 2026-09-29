@@ -15,5 +15,17 @@
 
 <img src="{{url_for('static', filename='logo.svg')}}" alt="my logo" width="300" height="300">
 
+<form action="/" method="POST">
+  <label for="visinaId">Višina (cm):</label><br>
+  <input type="text" id="fname" name="fname" value="{{podatki['visina']}}"><br>
+  <label for="tezaId">Teža (kg):</label><br>
+  <input type="text" id="lname" name="lname" value="{{podatki['teza']}}"><br><br>
+  <input type="submit" value="Izračunaj">
+</form> 
+
+{% if podatki['itm'] %}
+<i>Vaš ITM = {{podatki['itm']}}</i>
+{% endif %}
+
 </body>
 </html>
