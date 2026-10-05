@@ -28,8 +28,8 @@ def index():
         data["visina"] = request.form.get("visina")
         
         if data["teza"] and data["visina"]:
-            data["itm"] = izracunaj_itm(float(data["visina"]), float(data["teza"]))
-        data["itm"] = izracunaj_itm
+           data["itm"] = izracunaj_itm(float(data["visina"]), float(data["teza"]))
+           dbLogic.insertData(float(data["visina"]), float(data["teza"]),data["itm"])
         print(data)
         
     return render_template("index.html", podatki = data)
