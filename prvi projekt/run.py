@@ -25,8 +25,7 @@ def index():
     data["uspeh"] = dbLogic.getAll()
     if request.method == "POST":
         data["teza"] = request.form.get("teza")
-        data["visina"] = request.form.get("visina")
-        
+        data["visina"] = request.form.get("visina") 
         if data["teza"] and data["visina"]:
            data["itm"] = izracunaj_itm(float(data["visina"]), float(data["teza"]))
            dbLogic.insertData(float(data["visina"]), float(data["teza"]),data["itm"])
@@ -43,6 +42,12 @@ def dnevnik ():
     data = {}
     data["seznam"] = dbLogic.getAll()
     return render_template("dnevnik.html", podatki = data)
+    
+@app.route("/izbrisi/<sID>")
+def dnevnik_izbrisi(sID):
+    ID = int(sID)
+    dbLogic.deleteItm(ID)
+    return redirect("/dnevnik")
 
 # ZAGON APLIKACIJE
 app.config["DEBUG"] = True

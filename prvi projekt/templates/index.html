@@ -5,15 +5,16 @@
 </head>
 <body>
 
+
+
 <h1>My First Template</h1>
+<img src="{{url_for('static', filename='logo.svg')}}" alt="my logo" width="200" height="80">
 <p>Hello 2.Ri! ♥</p>
 {% if podatki['uspeh'] %}
 <i>Uspešno sem se povezal na database.</i>
 {% else %}
 <i><b>Neuspešno</b> sem se povezal na database.</i>
 {% endif %}
-
-<img src="{{url_for('static', filename='logo.svg')}}" alt="my logo" width="300" height="300">
 
 <form action="/" method="POST">
   <label for="visinaId">Višina (cm):</label><br>

@@ -1,11 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Dnevnik</title>
+<title>My first flask project!</title>
+<link href="{{url_for('static', filename='style.css')}}" rel="stylesheet">
 </head>
 <body>
 
-	<h1>ITM Dnevnik</h1>
+<h1>Dnevnik dogodkov</h1>
+
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Datum in čas</th>
+    <th>Višina</th>
+    <th>Teža</th>
+    <th>ITM</th>
+    <th>Akcija</th>
+  </tr>
+  {% for obj in podatki['seznam'] %}
+  <tr>
+    <td>{{obj.ID}}</td>
+    <td>{{obj.DatumCas}}</td>
+    <td>{{obj.Visina}}</td>
+    <td>{{obj.Teza}}</td>
+    <td>{{obj.Itm}}</td>
+    <td>Izbriši</td>
+  </tr>
+  {% endfor %}
+</table>
 
 </body>
 </html>
