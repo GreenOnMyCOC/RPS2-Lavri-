@@ -17,7 +17,7 @@
 
 -- Dumping database structure for itm
 DROP DATABASE IF EXISTS `itm`;
-CREATE DATABASE IF NOT EXISTS `itm` /*!40100 DEFAULT CHARACTER SET utf8mb4 */;
+CREATE DATABASE IF NOT EXISTS `itm` /*!40100 DEFAULT CHARACTER SET utf16 */;
 USE `itm`;
 
 -- Dumping structure for tabela itm.dnevnik
@@ -25,11 +25,12 @@ DROP TABLE IF EXISTS `dnevnik`;
 CREATE TABLE IF NOT EXISTS `dnevnik` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
   `DatumCas` datetime DEFAULT NULL,
-  `Visina` float DEFAULT NULL,
-  `Teza` float DEFAULT NULL,
-  `Itm` float DEFAULT NULL,
+  `visina` float DEFAULT NULL,
+  `teza` float DEFAULT NULL,
+  `itm` float DEFAULT NULL,
+  `IsDeleted` int(1) DEFAULT 0,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf16;
 
 -- Data exporting was unselected.
 
